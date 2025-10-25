@@ -1,0 +1,103 @@
+/* src/styles/global.css */
+@import "tailwindcss";
+
+/* ===== متغیرها و فونت فارسی ===== */
+:root {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+
+  /* Light theme */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-sidebar-bg: #ffffff;
+  --color-header-bg: #ffffff;
+  --color-card-bg: #ffffff;
+}
+
+:root.dark {
+  /* Dark theme */
+  --color-bg: #111827;
+  --color-bg-secondary: #1e293b;
+  --color-text: #f3f4f6;
+  --color-text-secondary: #9ca3af;
+  --color-border: #374151;
+  --color-sidebar-bg: #111827;
+  --color-header-bg: #1e293b;
+  --color-card-bg: #1e293b;
+}
+
+/* ===== بدنه صفحه و راست‌چین کردن ===== */
+html,
+body {
+  direction: rtl;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Dark theme */
+html.dark,
+body.dark {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+html.dark header {
+  background-color: var(--color-header-bg);
+  color: var(--color-text);
+}
+
+html.dark aside {
+  background-color: var(--color-sidebar-bg);
+  color: var(--color-text);
+}
+html.dark .bottom-nav {
+  background-color: var(--color-sidebar-bg);
+  color: var(--color-text);
+}
+
+a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #4338ca;
+}
+
+/* ===== Layout RTL ===== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* ===== ریسپانسیو ===== */
+@media (max-width: 1200px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: right;
+  }
+}
